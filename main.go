@@ -17,20 +17,22 @@ const (
 	stateDone        = "done"
 )
 
-// VideoInfo stores information about videos
-type VideoInfo struct {
-	URL      string
-	FileName string
-}
+type (
+	// VideoInfo stores information about videos
+	VideoInfo struct {
+		URL      string
+		FileName string
+	}
 
-// Video represents struct for streamer
-type Video struct {
-	Info VideoInfo
-	FSM  *fsm.FSM
-}
+	// Video represents struct for streamer
+	Video struct {
+		Info VideoInfo
+		FSM  *fsm.FSM
+	}
 
-// Videos is array of pointers to video to read states and manipulate with them
-type Videos []*Video
+	// Videos is array of pointers to video to read states and manipulate with them
+	Videos []*Video
+)
 
 // NewVideo creates a new video
 func NewVideo(url, filename string) *Video {
